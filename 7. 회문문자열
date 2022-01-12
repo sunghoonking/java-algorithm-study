@@ -1,0 +1,31 @@
+package main;
+
+import java.util.*;
+class Main {
+    public String solution(String str){
+        // 성공값 지정
+        String answer = "True";
+        // 대소문자 구분 없애기 위해서 소문자 통일
+        str = str.toLowerCase();
+        // 비교는 앞에 index 2개만 하면 되니까 len으로 개수를 지정함
+        int len = str.length();
+        // 개수 나누기 2만큼해서 반복문 실행
+        for(int i = 0; i< len/2; i++ ){
+            //만약 index [0] 과 마지막이 같지 아니하면 회문이 안되기 때문에 false
+            if(str.charAt(i) != str.charAt(len -i -1)) return "False";
+        }
+
+
+
+        return answer;
+    }
+
+    public static void main(String[] args){
+        Main S = new Main();
+        Scanner hon = new Scanner(System.in);
+        String str = hon.next();
+//        str = str.toUpperCase();
+        System.out.print(S.solution(str));
+    }
+}
+// 앞뒤로 바꿔도 똑같은 단어면 true 아니면 false boolean
