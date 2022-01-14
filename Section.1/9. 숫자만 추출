@@ -1,0 +1,22 @@
+import java.util.*;
+class Main {
+    
+    public String solution(String t){
+        String aswer="";
+        t = t.toUpperCase().replaceAll("[^0-9]","");
+        String tt = new String(t);
+        int ttt = Integer.parseInt(tt);
+        System.out.println(ttt);
+
+
+    return(aswer);
+    }
+
+
+    public static void main(String[] args){
+        Main ma = new Main();
+        Scanner hon = new Scanner(System.in);
+        String str = hon.next();
+        System.out.print(ma.solution(str));
+    }
+}
