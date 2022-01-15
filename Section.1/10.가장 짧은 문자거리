@@ -1,0 +1,54 @@
+package main;
+
+import java.util.*;
+class Main {
+
+    public int[] solution(String s, char t ){
+        // 입려된 문자열의 길이
+         int[] answer = new int[s.length()];
+         // 배열에 들어갈 숫자 선언
+         int p = 1000;
+         // 문자열의 길이만큼 반복문을 돌다가
+         for (int i =0; i<s.length(); i++ ){
+         // 만약에 문자 t 가 문자열 s의 문자와 일치하면 p를 0으로 하고 넣고
+             if (s.charAt(i)==t){
+                 p = 0;
+                 answer[i] = p;
+         // 아니면 p를 1증가 시켜서 넣는다다
+            }else {
+                 p++;
+                 answer[i]=p;
+
+             }
+         }
+         p = 1000;
+         // i는 문자열에 뒤에서부터 반복을 다시 하다가 i가 0보다 크거나 같을때 넘어감
+         for (int i = s.length()-1; i >=0; i--) {
+             if (s.charAt(i) == t)
+                 p = 0;
+
+
+                 // 아니면 p를 1증가 시켜서 넣는다다
+             else {
+                 p++;
+                 // 기존값과 p중에서 작은값으로 넣는다 (math,min) 은 둘중 작은 값을 리턴
+                 answer[i] = Math.min(answer[i], p);
+             }
+         }
+
+    return answer;
+    }
+
+
+    public static void main(String[] args){
+        Main ma = new Main();
+        Scanner hon = new Scanner(System.in);
+        String str = hon.next();
+        char stt = hon.next().charAt(0);
+        for (int x : ma.solution(str, stt)) {
+            System.out.print(x + " ");
+        }
+    }
+}
+
+//
