@@ -1,0 +1,31 @@
+package main;
+
+import java.util.*;
+class Main {
+    public String solution(String s){
+        String answer="";
+        s=s+" ";
+        // cnt를 1로 초기화
+        int cnt=1;
+        for(int i=0; i<s.length()-1; i++){
+            // s i 지점과 i+1 이 지점이 같으면 cnt를 1 증가
+            if(s.charAt(i)==s.charAt(i+1)) cnt++;
+            // 다르면 answer 에다가 i를 누적하고
+            else{
+                answer+=s.charAt(i);
+                //cnt 가 1보다 클 때 answer 누적을 함 cnt를 스트링문으로
+                if(cnt>1) answer+=String.valueOf(cnt);
+                // 다시 1로 초기화
+                cnt=1;
+            }
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        String str=kb.next();
+        System.out.println(T.solution(str));
+    }
+}
