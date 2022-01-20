@@ -1,0 +1,29 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        Scanner sh = new Scanner(System.in);
+        int num = Integer.parseInt(sh.nextLine());
+        int[] arr = new int[num];
+        for(int i = 0; i<arr.length;i++){
+            arr[i] = sh.nextInt();
+        }
+        int count =  1;
+        int kee = arr[0];
+        for(int i = 1; i<num; i++){
+            if(kee < arr[i]) {
+                count ++;
+                kee = arr[i];
+
+            }
+
+        }
+
+        System.out.println(count);
+
+    }
+}
