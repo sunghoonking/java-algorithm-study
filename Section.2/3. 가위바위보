@@ -1,0 +1,46 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        Scanner sh = new Scanner(System.in);
+        int num = sh.nextInt();
+        int[] arr = new int[num];
+        int[] you = new int[num];
+        int s = 1;
+        int r = 2;
+        int p = 3;
+
+        for (int i = 0; i < num; i++) {
+            arr[i] = sh.nextInt();
+        }
+        for (int i = 0; i < num; i++) {
+            you[i] = sh.nextInt();
+        }
+
+        for(int i=0; i< num; i++){
+            if(arr[i] == you[i]){
+                System.out.println("D");
+            }else if (arr[i]== 1 && you[i]==3){
+                System.out.println("A");
+            }else if (arr[i]==2 && you[i]==1){
+                System.out.println("A");
+            }else if (arr[i]==3 && you[i]==2){
+                System.out.println("A");
+            }else {
+                System.out.println("B");
+            }
+
+
+        }
+
+
+
+
+
+
+    }
+}
