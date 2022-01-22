@@ -1,0 +1,26 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        Scanner sh = new Scanner(System.in);
+        int num = sh.nextInt();
+
+        int sh1 =0;
+        int sh2=1;
+        int s = 1;
+
+
+
+        for (int i = 0; i < num; i++) {
+            System.out.print(s+ " ");
+              s = sh1 + sh2;
+              sh1=sh2;
+              sh2=s;
+
+        }
+    }
+}
