@@ -1,0 +1,32 @@
+package main;
+
+import java.util.*;
+
+class Main {
+
+
+    public static void main(String[] args) {
+
+        Scanner sh = new Scanner(System.in);
+        int num = sh.nextInt();
+        int[] arr = new int[num];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = Integer.parseInt(sh.next());
+
+        }
+       int [] score = new int[num];
+              // 이중 for문으로 1 넣고 그 상태로 돌리면서 체크
+        for(int i=0; i<num;i++){
+            int count = 1;
+            for(int j =0;j<num; j++) {
+                if (arr[j] > arr[i]) {
+                    count++;
+                }
+            }
+            score[i]=count;
+            System.out.print(score[i]+" ");
+
+        }
+
+    }
+}
