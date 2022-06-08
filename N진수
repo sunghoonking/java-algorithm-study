@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main  {
+
+    public static void main(String[] args) {
+
+        String solution = Solution.solution(2, 4, 2, 1);
+
+        System.out.println(solution);	// String 형 입력 및 리턴 (개행을 기준으로 한 줄을 읽음)
+    }
+
+
+    static public class Solution {
+
+
+        public static String solution(int n, int t, int m, int p) {
+            // n = 진법
+            // t = 주인공이 말해야 할 숫자의 갯수
+            // m = 게임에 참가하는 인원
+            // p = 주인공의 순서
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            int c = 0;
+
+            String temp = "";
+
+            ArrayList array = new ArrayList<String>();
+
+            while(true){
+
+                temp = Integer.toString(c++,n);
+
+                var spl = temp.split("");
+
+                for(int l =0; l < temp.length(); l++ ){
+                    array.add(spl[l]);
+                }
+
+                if(array.size() > m*t)
+                    break;
+            }
+
+            for(int h =0; h < array.size(); h++ ){
+                if(h % m == p-1 && stringBuilder.length() < t){
+                    stringBuilder.append(array.get(h));
+
+                }
+            }
+
+            return stringBuilder.toString();
+
+
+
+        }
+    }
+}
