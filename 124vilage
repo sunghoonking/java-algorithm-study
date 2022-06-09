@@ -1,0 +1,46 @@
+package N진법;
+
+import java.util.Scanner;
+
+public class Vilage {
+    public static void main(String[] args) {
+
+
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+
+        String answer = "";
+
+
+        int[] i = {1,2,4};
+
+        Integer.toString(a,3);
+//        int i1 = i[a % 3];
+
+        // 만약에 n을 3으로 나눴을때 나머지가 n이면 답은 n
+        // 만약에 n을 3으로 나눴을때 나머지가 0이면 답은 "" + "4"
+        // 만약에 n을 3으로 나눴을때 나머지가 1이면 답은 "" + "1"
+        // 만약에 n을 3으로 나눴을때 나머지가 2이면 답은 "" + "2"
+
+         if (a % 3 == a){
+             String string = Integer.toString(a);
+             answer = string;
+         } else if (a % 3 == i[2]){
+
+         } else if (a % 3 == i[0]){
+
+         } else {
+             answer = ()
+         }
+
+
+
+//
+//        for (int j = 0; j < ; j++) {
+//
+//        }
+
+
+
+    }
+}
